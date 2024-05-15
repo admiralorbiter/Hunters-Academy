@@ -23,9 +23,12 @@ label start:
 
 # Introduction scene
 label introduction:
+
+    play music "intro.mp3" fadein 1.0
+
     # Show the solid black background
     scene black
-    
+
     # Show title background images with transitions and pauses
     show bg title1
     with dissolve
@@ -78,5 +81,6 @@ label main:
 
     show chloe happy at Position(xalign=0.1, yalign=0.75)  # Adjust position as needed
 
+    stop music fadeout 1.0
     # This ends the game.
     return
