@@ -1,7 +1,6 @@
 ﻿# Declare characters used by this game. The color argument colorizes the name of the character.
 define e = Character("Chloe", color="#c8c8ff")
 
-
 image bg title1 = "hunters-academy-title.jpg"
 image bg title2 = "hunters-academy-title.png"
 image bg title3 = "huntersacademy-title.png"
@@ -15,36 +14,19 @@ image chloe emote = im.Scale("chloe-emote.png", 600, 900)             # Chloe si
 image chloe happy = im.Scale("chloe-happy.png", 600, 900)           # Chloe happy side image scaled to 400x600
 image chloe side = im.Scale("chloe-side.png", 600, 900)             # Chloe side image scaled to 400x600
 image chloe side flipped = im.Scale(im.Flip("chloe-side.png", horizontal="True"), 600, 900)# Flipped Chloe headshot image
-
+image intro = Movie(size=(1920, 1080),  play="intro.webm", loop=False)
 # The game starts here.
 label start:
+    play music "intro.mp3" fadein 1.0
+    show intro
+    pause
     # Jump to the introduction scene
     jump introduction
 
 # Introduction scene
 label introduction:
 
-    play music "intro.mp3" fadein 1.0
-
     # Show the solid black background
-    scene black
-
-    # Show title background images with transitions and pauses
-    show bg title1
-    with dissolve
-    pause 8
-
-    show bg title2
-    with dissolve
-    pause 8
-
-    show bg title3
-    with dissolve
-    pause 8
-
-    show bg title4
-    with dissolve
-    pause 8
 
     # After the introduction, jump to the main label
     jump main
@@ -69,7 +51,7 @@ label main:
     e "Witches."
     e "Vampires."
     e "Werewolves."
-    e "Even humans.. all roam the streets together. Kept in balance by a old phrophecy that if one species goes extinct, the rest will follow."
+    e "Even humans.. all roam the streets together. Kept in balance by a old prophecy that if one species goes extinct, the rest will follow."
     e "Everything changed when vampires started overfeeding killing humans for sport."
 
     show chloe side flipped at Position(xalign=0.1, yalign=0.75)  # Adjust position as needed
