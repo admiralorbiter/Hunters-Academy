@@ -2,9 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 22: expected statement.
-    renpy.pause(0, hard=True, delay=0)
-                                      ^
+File "game/script.rpy", line 20: ATL statement contains two expressions in a row; is one of them a misspelled property? If not, separate them with pass.
+    bg forest
+             ^
 
-Ren'Py Version: Ren'Py 8.2.1.24030407
-Fri May 17 09:09:27 2024
+File "game/script.rpy", line 27: ATL statement contains two expressions in a row; is one of them a misspelled property? If not, separate them with pass.
+    bg forest
+             ^
+
+Ren'Py Version: Ren'Py 8.2.0.24012702
+Tue May 21 09:55:10 2024

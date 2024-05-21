@@ -15,6 +15,29 @@ image chloe happy = im.Scale("chloe-happy.png", 600, 900)           # Chloe happ
 image chloe side = im.Scale("chloe-side.png", 600, 900)             # Chloe side image scaled to 400x600
 image chloe side flipped = im.Scale(im.Flip("chloe-side.png", horizontal="True"), 600, 900)# Flipped Chloe headshot image
 image intro = Movie(size=(1920, 1080),  play="intro.webm", loop=False)
+
+image wiggle_effect:
+    "forest.png"
+    size (1920, 1080)
+    xalign 0.5 yalign 0.5
+    linear 0.5 rotate .1
+    linear 0.5 rotate -.1
+    repeat
+
+image pulse_effect:
+    "forest.png"
+    size (1920, 1080)
+    linear 0.5 alpha 0.8
+    linear 0.5 alpha 1.0
+    repeat
+
+image scale_effect:
+    "forest.png"
+    size (1920, 1080)
+    linear 1 zoom 1.01
+    linear 1 zoom 1.00
+    repeat
+
 # The game starts here.
 label start:
     play music "intro.mp3" fadein 1.0
@@ -37,7 +60,9 @@ label main:
     scene black
 
     # Show the scaled forest background image with transparency
-    show bg forest
+    # show wiggle_effect
+    # show pulse_effect
+    show scale_effect
 
     # Show a character sprite.
     show chloe headshot at Position(xalign=0.5, yalign=0.75)  # Adjust position as needed
